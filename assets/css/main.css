@@ -1401,10 +1401,10 @@ body.is-preload #bg:before {
   content: "";
   display: block;
   position: absolute;
-  top: calc(-3.5rem - 1px);
+  top: calc(-4rem - 1px);
   left: calc(50% - 1px);
   width: 1px;
-  height: calc(3.5rem + 1px);
+  height: calc(2.5rem + 1px);
   background: #ffffff;
 }
 
@@ -1413,6 +1413,14 @@ body.is-preload #bg:before {
 }
 
 #header > :first-child:before {
+  display: none;
+}
+
+#header > :nth-child(2) {
+  margin-top: 0;
+}
+
+#header > :nth-child(2):before {
   display: none;
 }
 
