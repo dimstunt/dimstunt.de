@@ -2,17 +2,18 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Дресс-код</title>
-<style>
-  body { font-family: Arial, sans-serif; text-align: center;}
-  .color-list { display: flex; justify-content: space-around; margin-top: 20px; }
-  .color-column { width: 45%; }
-  .color { margin: 5px; padding: 10px; color: white; border-radius: 5px; }
-  h2 { text-align: center; }
-</style>
+<title>Дресс-код: Какой же красный выбрать?</title>
+<link rel="stylesheet" href="./colors/css/style.css">
 </head>
 <body>
 <h1>Дресс-код: Какой же красный выбрать?</h1>
+<p>Хотите подобрать красный к красно-черному наряду на свадьбу, но не можете определиться? Отлично, мы тоже!</p>
+<button id="help-button" class="button">Помочь понять, норм ли цвет вообще</button>
+<p id="video-help">Поместите нужный цвет в "рамку"</p>
+<canvas id="video-output"></canvas>
+<button id="switch-camera" class="button">Другая камера</button>
+<button id="take-photo" class="button">Определить цвет</button>
+<div id="color-response" class="color"></div>
 <div class="color-list">
   <div class="color-column">
     <h2>Цвета ОК</h2>
@@ -21,81 +22,6 @@
     <h2>Цвета не ОК</h2>
   </div>
 </div>
-<script>
-  const allColors = [{'name': 'Oxblood', 'hex': '#4A0404'},
- {'name': 'Tyrian Purple', 'hex': '#630330'},
- {'name': 'Burnt Umber', 'hex': '#6E260E'},
- {'name': 'Byzantium', 'hex': '#702963'},
- {'name': 'Wine', 'hex': '#722F37'},
- {'name': 'Mulberry', 'hex': '#770737'},
- {'name': 'Falu Red', 'hex': '#7B1818'},
- {'name': 'Tuscan Red', 'hex': '#7C3030'},
- {'name': 'Maroon', 'hex': '#800000'},
- {'name': 'Burgundy', 'hex': '#800020'},
- {'name': 'Russet', 'hex': '#80461B'},
- {'name': 'Claret', 'hex': '#811331'},
- {'name': 'Cordovan', 'hex': '#814141'},
- {'name': 'Blood Red', 'hex': '#880808'},
- {'name': 'Dark Red', 'hex': '#8B0000'},
- {'name': 'Red Ochre', 'hex': '#913831'},
- {'name': 'Red Purple', 'hex': '#953553'},
- {'name': 'Chestnut', 'hex': '#954535'},
- {'name': 'Marsala', 'hex': '#986868'},
- {'name': 'Garnet', 'hex': '#9A2A2A'},
- {'name': 'Venetian Red', 'hex': '#A42A04'},
- {'name': 'Red Brown', 'hex': '#A52A2A'},
- {'name': 'Brown', 'hex': '#A52A2A'},
- {'name': 'Puce', 'hex': '#A95C68'},
- {'name': 'Brick Red', 'hex': '#AA4A44'},
- {'name': 'Mahogany', 'hex': '#C04000'},
- {'name': 'Rose Red', 'hex': '#C21E56'},
- {'name': 'Cardinal Red', 'hex': '#C41E3A'},
- {'name': 'Burnt Orange', 'hex': '#CC5500'},
- {'name': 'Cherry', 'hex': '#D2042D'},
- {'name': 'Cadmium Red', 'hex': '#D22B2B'},
- {'name': 'Carmine', 'hex': '#D70040'},
- {'name': 'Crimson', 'hex': '#DC143C'},
- {'name': 'Cerise', 'hex': '#DE3163'},
- {'name': 'Ruby Red', 'hex': '#E0115F'},
- {'name': 'Raspberry', 'hex': '#E30B5C'},
- {'name': 'Vermillion', 'hex': '#E34234'},
- {'name': 'Poppy', 'hex': '#E35335'},
- {'name': 'Terra Cotta', 'hex': '#E3735E'},
- {'name': 'Burnt Sienna', 'hex': '#E97451'},
- {'name': 'Persimmon', 'hex': '#EC5800'},
- {'name': 'Bright Red', 'hex': '#EE4B2B'},
- {'name': 'Coral Pink', 'hex': '#F88379'},
- {'name': 'Sunset Orange', 'hex': '#FA5F55'},
- {'name': 'Salmon', 'hex': '#FA8072'},
- {'name': 'Pastel Red', 'hex': '#FAA0A0'},
- {'name': 'Red', 'hex': '#FF0000'},
- {'name': 'Scarlet', 'hex': '#FF2400'},
- {'name': 'Neon Red', 'hex': '#FF3131'},
- {'name': 'Red Orange', 'hex': '#FF4433'}];
-
-  const notOkColors = [
-    "Brick Red", "Burnt Umber", "Burnt Orange", "Burnt Sienna", "Byzantium",
-    "Chestnut", "Coral Pink", "Cordovan", "Falu Red", "Garnet", "Mahogany",
-    "Marsala", "Mulberry", "Oxblood", "Pastel Red", "Persimmon", "Poppy",
-    "Puce", "Raspberry", "Red Ochre", "Red Orange", "Red Purple", "Rose Red",
-    "Ruby Red", "Russet", "Salmon", "Sunset Orange", "Terra Cotta", "Tuscan Red",
-    "Tyrian Purple", "Venetian Red", "Wine", "Brown", "Red Brown"
-  ];
-
-  const okColorsContainer = document.querySelector(".color-list .color-column:first-child");
-  const notOkColorsContainer = document.querySelector(".color-list .color-column:last-child");
-
-  allColors.forEach(color => {
-    const colorDiv = document.createElement("div");
-    colorDiv.className = "color";
-    colorDiv.style.backgroundColor = color.hex;
-    colorDiv.textContent = `${color.name} (${color.hex})`;
-    if (notOkColors.includes(color.name)) {
-      notOkColorsContainer.appendChild(colorDiv);
-    } else {
-      okColorsContainer.appendChild(colorDiv);
-    }
-  });
-</script>
+<script type="module" src="./colors/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4;}
+#video-output, #take-photo, #color-response, #video-help, #switch-camera { display: none; width: 70%; margin: 0 auto; border: 3px solid transparent; }
+.color-list { display: flex; justify-content: space-around; margin-top: 20px; }
+.color-column { width: 45%; }
+.color { margin: 5px; padding: 10px; color: white; border-radius: 5px; }
+.color-elem { margin: 5px; padding: 10px; color: white; border-radius: 5px; }
+h2 { text-align: center; }
