@@ -1,20 +1,37 @@
-import { initCamera, drawRect, currentDeviceId } from './camera.js';
+import { initCamera, drawRect, video } from './camera.js';
 import { getAverageColor, rgbToHex, hexToRgb } from './colorAnalysis.js';
 import { fetchColorNameFromAPI } from './api.js';
 import { allColors, notOkColors } from './colors.js';
 
 const canvas = document.getElementById('video-output');
 const context = canvas.getContext('2d');
-const video = document.createElement('video');
-video.setAttribute('autoplay', '');
-video.setAttribute('playsinline', '');
+
 let lastAverageColor = null;
 
-document.getElementById('help-button').addEventListener('click', () => {
+document.getElementById('help-button').addEventListener('click', async() => {
   const helpButton = document.getElementById('help-button');
-  initCamera(video, canvas, drawVideo);
+  await initCamera(video, canvas, drawVideo);
   helpButton.style.display = 'none'; // Скрываем кнопку
+  await listVideoDevices();
 });
+
+async function listVideoDevices() {
+  try {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const videoDevices = devices.filter(device => device.kind === 'videoinput');
+
+    const deviceListElement = document.getElementById('device-list');
+    deviceListElement.innerHTML = ''; // Очистка предыдущего списка устройств
+
+    videoDevices.forEach(device => {
+      const deviceInfo = document.createElement('p');
+      deviceInfo.textContent = `Device: ${device.label || 'No label available'}, ID: ${device.deviceId}`;
+      deviceListElement.appendChild(deviceInfo);
+    });
+  } catch (err) {
+    console.error("Ошибка при загрузке видеоустройств: ", err);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const colorBlockHeight = document.querySelector('.color-elem').offsetHeight; // Получаем высоту блока цвета
@@ -26,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('switch-camera').addEventListener('click', () => {
-  currentCamera = currentCamera === 'user' ? 'environment' : 'user';
-  initCamera(video, currentCamera);
+  // Переключаемся на следующую камеру в списке
+  initCamera(video, canvas, drawVideo); // Переинициализация камеры с новым deviceId
 });
 
   const okColorsContainer = document.querySelector(".color-list .color-column:first-child");

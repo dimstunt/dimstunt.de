@@ -1,32 +1,40 @@
-export let currentDeviceId = undefined;
-export async function initCamera(video, canvas, drawVideoCallback, useFrontCamera = true) {
-  try {
-    const devices = await navigator.mediaDevices.enumerateDevices();
-    const videoDevices = devices.filter(device => device.kind === 'videoinput');
+// Объявляем переменные для хранения доступных устройств и текущего индекса устройства
+export let videoDevices = [];
+export let currentDeviceIndex = 0;
 
-    let desiredDevice;
-    if (useFrontCamera) {
-      // Ищем фронтальную камеру
-      desiredDevice = videoDevices.find(device => device.label.toLowerCase().includes('front'));
-    } else {
-      // Ищем заднюю камеру
-      desiredDevice = videoDevices.find(device => device.label.toLowerCase().includes('back'));
+export let video = document.createElement('video');
+video.setAttribute('autoplay', '');
+video.setAttribute('playsinline', '');
+
+export async function initCamera(video, canvas, drawVideoCallback) {
+  try {
+    // Если список устройств пуст, получаем список всех видеоустройств
+    if (videoDevices.length === 0) {
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      videoDevices = devices.filter(device => device.kind === 'videoinput');
+      if (videoDevices.length === 0) {
+        throw new Error('No video devices found');
+      }
     }
 
-    // Если специфическое устройство не найдено, используем первое доступное видеоустройство
-    currentDeviceId = desiredDevice ? desiredDevice.deviceId : videoDevices[0].deviceId;
+    // Получаем deviceId следующего устройства в списке
+    let deviceId = videoDevices[currentDeviceIndex].deviceId;
+    console.log(videoDevices)
+    // Обновляем индекс текущего устройства
+    currentDeviceIndex = (currentDeviceIndex + 1) % videoDevices.length;
 
     const constraints = {
-      video: { deviceId: currentDeviceId ? { exact: currentDeviceId } : undefined }
+      video: { deviceId: { exact: deviceId } }
     };
 
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    let stream = await navigator.mediaDevices.getUserMedia(constraints);
     video.srcObject = stream;
     video.play();
     document.getElementById('video-output').style.display = 'block';
     document.getElementById('take-photo').style.display = 'block';
     document.getElementById('video-help').style.display = 'block';
     document.getElementById('switch-camera').style.display = 'block';
+    document.getElementById('switch-camera').textContent = `Включить ${videoDevices[currentDeviceIndex].label || 'No label available'}`;
     drawVideoCallback();
   } catch (err) {
     console.error("Ошибка доступа к камере: ", err);
