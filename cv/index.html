@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dmitrii Cherkashin — CV</title>
+  <meta name="description" content="CV of Dmitrii Cherkashin, data engineer: lakehouses, CDC pipelines, data warehouses.">
+  <link rel="canonical" href="https://dimstunt.de/cv/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://dimstunt.de/cv/">
+  <meta property="og:title" content="Dmitrii Cherkashin — CV">
+  <meta property="og:image" content="https://dimstunt.de/og.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/cv/cv.css">
+</head>
+<body>
+<main class="cv">
+  <header>
+    <div>
+      <a class="mono no-print" href="/">← dimstunt.de</a>
+      <h1>Dmitrii Cherkashin</h1>
+      <p>Data Engineer · Montevideo, Uruguay · remote</p>
+      <p><a href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a> · <a href="https://www.linkedin.com/in/dimstunt/">linkedin.com/in/dimstunt</a> · <a href="https://github.com/dimstunt">github.com/dimstunt</a> · <a href="/">dimstunt.de</a></p>
+    </div>
+    <button class="button no-print" onclick="print()">save as PDF</button>
+  </header>
+
+  <h2>About</h2>
+  <p>Data engineer with nine years of experience building data platforms — from Data Vault warehouses in banking
+    and ride-hailing to an AWS lakehouse in health-tech. I design architectures, build CDC and batch pipelines,
+    and own platforms end to end: reliability, data quality, access control and cost. I have hired and led a data
+    team and mentored engineers. Degree in Mathematical Physics from Lomonosov Moscow State University.</p>
+
+  <h2>Experience</h2>
+
+  <section class="job">
+    <div class="job-head"><strong>Welltory · Data Engineer</strong><span>Remote · 01/2025 – now</span></div>
+    <h3>Responsibilities</h3>
+    <ul>
+      <li>Own the company's data platform end to end: availability, quality, access speed and cost of data for analytics and health calculations</li>
+      <li>Designed and built a data lakehouse on AWS from scratch: S3 + Apache Iceberg, Glue, Athena, Airflow</li>
+      <li>CDC replication from Postgres and DynamoDB via Kafka into the lakehouse</li>
+      <li>Data catalog and lineage in OpenMetadata; column-level access control with Lake Formation tags (PII/PHI); GDPR export and erasure pipelines</li>
+    </ul>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Forked and maintain an abandoned open-source Kafka Connect DynamoDB Streams connector in production (12 tables, 300+ shards); cut its checkpoint write load ~5.7× with zero throttling</li>
+      <li>Scaled the CDC pipeline through an 80× surge in data volume after a major product launch</li>
+      <li>Retired the legacy data lake after migrating its history into Iceberg</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>US music publisher · Data Engineer (contract)</strong><span>Remote · 2024</span></div>
+    <ul>
+      <li>Replication from IBM AS/400 into ClickHouse with data-quality reconciliation and recovery tooling</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>Anabar · Senior Data Engineer</strong><span>Remote · 02/2023 – 06/2024</span></div>
+    <h3>Responsibilities</h3>
+    <ul>
+      <li>Designed and implemented data processing pipelines with Airflow, Trino and ClickHouse in Yandex Cloud</li>
+      <li>Optimized data storage and query performance in ClickHouse</li>
+      <li>Took part in the migration from a monolith to FastAPI microservices</li>
+      <li>Worked with cross-functional teams on data requirements, quality and consistency</li>
+    </ul>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Reduced data processing time from 17 to 7 hours, raising SLA compliance from 70% to 95%</li>
+      <li>Cut ClickHouse storage usage by 40%</li>
+      <li>Improved p90 query response time from 20 seconds to under 1 second</li>
+      <li>Grew the team's data engineering practices through mentorship and tech talks</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>Agro.club · Lead Data Engineer</strong><span>Moscow · 09/2021 – 11/2022</span></div>
+    <h3>Responsibilities</h3>
+    <ul>
+      <li>Hired and managed the DWH team from scratch; set the strategy, processes and deadlines for the DWH division</li>
+      <li>Designed the Data Warehouse architecture with Data Vault</li>
+      <li>Built ETL pipelines from MongoDB, Postgres and APIs into the warehouse with Airflow</li>
+      <li>Developed data synchronization between partner ERP systems and the PostgreSQL backend</li>
+      <li>Introduced data quality checks and data governance</li>
+    </ul>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Built and led the DWH team and delivered a scalable Data Vault warehouse</li>
+      <li>Improved data consistency across partner ERP systems</li>
+      <li>Accelerated business report generation from 1.5 hours to 1–2 minutes</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>Citymobil · Senior Data Engineer</strong><span>Moscow · 06/2020 – 09/2021</span></div>
+    <h3>Responsibilities</h3>
+    <ul>
+      <li>Built ETL pipelines from MySQL, ClickHouse, Kafka and APIs into the warehouse with Airflow</li>
+      <li>Implemented online CDC replication MySQL → Kafka → Exasol</li>
+      <li>Designed and implemented the DDS loader with Airflow DAGs and operators</li>
+    </ul>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Designed self-service replication for “one-click” table onboarding</li>
+      <li>Strengthened the warehouse structure with a detailed Data Vault framework</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>Mail.ru Group · Senior System Analyst DWH</strong><span>Moscow · 11/2018 – 06/2020</span></div>
+    <ul>
+      <li>Created the DWH data model for Delivery Club and the logical data model for Citymobil from scratch</li>
+      <li>Built e-commerce user portrait reports in Tableau; supported Spark processing scripts</li>
+      <li>Reduced time from task creation to production reporting from 3 weeks to 1 week</li>
+    </ul>
+  </section>
+
+  <section class="job">
+    <div class="job-head"><strong>Tinkoff Bank · System Analyst DWH</strong><span>Moscow · 10/2017 – 11/2018</span></div>
+    <ul>
+      <li>Designed the integration receiving checks from the national payment card system</li>
+      <li>Designed and prototyped Data Vault data models and data marts in SAP PowerDesigner</li>
+      <li>Worked with Greenplum, Vertica, SAS DIS, Informatica PC and SAP BO; wrote BRDs and FSDs</li>
+    </ul>
+  </section>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>languages</dt><dd>Python, SQL, Scala</dd>
+    <dt>lakehouse &amp; dwh</dt><dd>Apache Iceberg, AWS (S3, Glue, Athena, Lake Formation), ClickHouse, Trino, Greenplum, Vertica, Exasol, Data Vault</dd>
+    <dt>databases</dt><dd>PostgreSQL, MySQL, MongoDB, DynamoDB</dd>
+    <dt>streaming &amp; cdc</dt><dd>Kafka, Kafka Connect, Debezium, KSQL, Faust, NiFi</dd>
+    <dt>processing</dt><dd>Airflow, Spark, dbt, Hive</dd>
+    <dt>governance</dt><dd>OpenMetadata, data modeling, data quality, GDPR</dd>
+    <dt>bi</dt><dd>Metabase, Superset, Tableau, Redash</dd>
+    <dt>infra</dt><dd>Docker, Kubernetes, Terraform, Grafana, Sentry, GitLab CI</dd>
+  </dl>
+
+  <h2>Education</h2>
+  <p><strong>Lomonosov Moscow State University</strong> · Bachelor, 2018<br>
+    Mathematical Physics, Faculty of Computational Mathematics and Cybernetics</p>
+
+  <h2>Languages</h2>
+  <p>Russian — native · English — B2, professional working</p>
+
+  <h2>Interests</h2>
+  <p>Running · Climbing · Snowboarding · Surfing</p>
+
+  <footer class="no-print"><a href="/">← dimstunt.de</a></footer>
+</main>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8870d9da0eba46769ab41a7fc707dda6"}'></script>
+</body>
+</html>

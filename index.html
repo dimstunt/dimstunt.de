@@ -1,70 +1,193 @@
-<!DOCTYPE html>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Dimstunt (Dmitrii Cherkashin)</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" type="image/x-icon" href="./snowboarder.png" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dmitrii Cherkashin — Data Engineer</title>
+  <meta name="description" content="Data engineer building lakehouses, CDC pipelines and data platforms. Nine years, currently at Welltory. Based in Montevideo.">
+  <link rel="canonical" href="https://dimstunt.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dimstunt.de/">
+  <meta property="og:title" content="Dmitrii Cherkashin — Data Engineer">
+  <meta property="og:description" content="Lakehouses, CDC pipelines and data platforms. Nine years, currently at Welltory.">
+  <meta property="og:image" content="https://dimstunt.de/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0b0d13">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
 </head>
+<body>
+<header class="hud">
+  <div class="wrap">
+    <span class="id">dimstunt.de</span>
+    <span class="node">Contractor registry · node Montevideo · UTC−3</span>
+    <nav aria-label="Main">
+      <a href="/cv/">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<body class="is-preload">
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Header -->
-		<header id="header">
-			<h1>Dmitrii Cherkashin</h1>
-			<p>Data Engineer &nbsp;&bull;&nbsp;&bull;&nbsp; Snowboarder&nbsp;</p>
-			<p>
-				<a href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a>
-			</p>
-			<nav>
-				<ul>
-					<li>
-						<a href="https://dimstunt.t.me/" class="icon brands fa-telegram"><span class="label">Telegram</span></a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/dimstunt/" class="icon brands fa-instagram"><span
-								class="label">Instagram</span></a>
-					</li>
-					<li>
-						<a href="./de_cherkashin_cv.pdf" class="cv-link"><span class="label">my CV</span></a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/dimstunt/" class="icon brands fa-linkedin"><span
-								class="label">Linkedin</span></a>
-					</li>
-					<li>
-						<a href="https://github.com/dimstunt" class="icon brands fa-github"><span class="label">Github</span></a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+<main>
+  <section class="hero" aria-labelledby="name">
+    <div class="wrap">
+      <h1 id="name"><span>Dmitrii</span> <span>Cherkashin</span></h1>
+      <div>
+        <p class="tagline">Data engineer · snowboarder</p>
+        <p class="pitch">I build data platforms that keep working when the data grows 80×. Nine years, six companies, one lakehouse built from scratch.</p>
+      </div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy; Dimstunt</p>
-		</footer>
-	</div>
+      <div class="card-wrap">
+        <article class="card" aria-labelledby="card-title">
+          <h2 id="card-title">Operative card <span>active</span></h2>
+          <dl>
+            <dt>Class</dt><dd>Data engineer</dd>
+            <dt>Contract</dt><dd><b>Welltory</b>, lakehouse on AWS</dd>
+            <dt>Exp</dt><dd><span class="num">9</span> years, since <span class="num">2017</span></dd>
+            <dt>Node</dt><dd>Montevideo, UY · remote</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="/cv/">Open CV
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+            </a>
+            <a class="mail" href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a>
+          </div>
+        </article>
+        <p class="sticker">Survived an 80× data surge</p>
+      </div>
+    </div>
+  </section>
 
-	<!-- BG -->
-	<div id="bg"></div>
+  <section class="block" aria-labelledby="log">
+    <div class="wrap">
+      <h2 id="log">Contract log</h2>
+      <p class="lede">Experience, newest first. The cyan line is the payout: what changed because I was there.</p>
+      <ol class="log">
+        <li>
+          <span class="when now">2025–now</span>
+          <div class="who"><b>Welltory</b><span>Data engineer</span></div>
+          <p class="pay">Lakehouse on AWS from zero · DynamoDB connector writes ÷5.7 · held an 80× data surge</p>
+        </li>
+        <li>
+          <span class="when num">2024</span>
+          <div class="who"><b>US music publisher</b><span>Contract</span></div>
+          <p class="pay">IBM AS/400 → ClickHouse replication with reconciliation and recovery tooling</p>
+        </li>
+        <li>
+          <span class="when num">2023–2024</span>
+          <div class="who"><b>Anabar</b><span>Senior data engineer</span></div>
+          <p class="pay">Processing 17h → 7h · p90 query 20s → &lt;1s · storage −40%</p>
+        </li>
+        <li>
+          <span class="when num">2021–2022</span>
+          <div class="who"><b>Agro.club</b><span>Lead data engineer</span></div>
+          <p class="pay">DWH team hired from zero · business reports 1.5h → 2 min</p>
+        </li>
+        <li>
+          <span class="when num">2020–2021</span>
+          <div class="who"><b>Citymobil</b><span>Senior data engineer</span></div>
+          <p class="pay">CDC MySQL → Kafka → Exasol · one-click table replication</p>
+        </li>
+        <li>
+          <span class="when num">2018–2020</span>
+          <div class="who"><b>Mail.ru Group</b><span>Senior system analyst, DWH</span></div>
+          <p class="pay">Task-to-report time 3 weeks → 1 week</p>
+        </li>
+        <li>
+          <span class="when num">2017–2018</span>
+          <div class="who"><b>Tinkoff Bank</b><span>System analyst, DWH</span></div>
+          <p class="pay">Integration with the national payment card system</p>
+        </li>
+      </ol>
+      <p class="more"><a class="btn" href="/cv/">Full CV
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+      </a></p>
+    </div>
+  </section>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+  <aside class="ad-zone" aria-label="Advertisement (a joke, but the numbers are real)">
+    <div class="wrap">
+      <div class="ad">
+        <div>
+          <p class="shout">Are your reports slow??</p>
+          <p class="offer">1.5 hours → <em>2 minutes</em></p>
+          <p class="fine">*Result achieved at Agro.club, 2022. Individual pipelines may vary. Side effects include a data warehouse.</p>
+        </div>
+        <img class="face" src="/img/face.png" width="32" height="32" alt="">
+        <p><a class="btn" href="mailto:mit.cherkashin@gmail.com">Contact now</a></p>
+      </div>
+    </div>
+  </aside>
+
+  <section class="block" aria-labelledby="ware">
+    <div class="wrap">
+      <h2 id="ware">Installed cyberware</h2>
+      <p class="lede">The stack I run in production right now, plus what is still in the bloodstream.</p>
+      <dl class="ware">
+        <div><dt>Lakehouse</dt><dd>Apache Iceberg, AWS S3, Glue, Athena, Lake Formation</dd></div>
+        <div><dt>Streaming</dt><dd>Kafka, Kafka Connect, Debezium, CDC</dd></div>
+        <div><dt>Orchestration</dt><dd>Airflow, dbt, Spark</dd></div>
+        <div><dt>Governance</dt><dd>OpenMetadata, data quality, GDPR pipelines</dd></div>
+        <div><dt>Warehouses</dt><dd>ClickHouse, Trino, Greenplum, Vertica, Exasol, Data Vault</dd></div>
+        <div><dt>Languages</dt><dd>Python, SQL, Scala</dd></div>
+        <div><dt>Infra</dt><dd>Docker, Kubernetes, Terraform, Grafana</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="gigs">
+    <div class="wrap">
+      <h2 id="gigs">Side gigs</h2>
+      <p class="lede">Built after hours, used every day.</p>
+      <ul class="gigs">
+        <li>
+          <h3>Vox</h3>
+          <div>
+            <p>Meeting recorder for macOS. Local transcription and speaker diarization: the audio never leaves the laptop.</p>
+            <p class="stack">Swift 6 · SwiftUI · Parakeet · pyannote</p>
+          </div>
+        </li>
+        <li>
+          <h3>dima-lab</h3>
+          <div>
+            <p>Home server running my self-hosted stack: monitoring, smart home, a Git server and an AI agent, all behind a private mesh network.</p>
+            <p class="stack">Docker · Home Assistant · Grafana · Caddy · Tailscale</p>
+          </div>
+        </li>
+        <li>
+          <h3>dimstunt-plugins</h3>
+          <div>
+            <p>Plugins and skills for Claude Code: a knowledge wiki maintained by agents, homelab ops, pre-merge review gates.</p>
+            <p class="stack">Claude Code · Python · MCP</p>
+          </div>
+        </li>
+      </ul>
+      <p class="note">Repos are private. Happy to walk through any of them on a call.</p>
+    </div>
+  </section>
+
+  <section class="jack" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Jack in</h2>
+      <a class="big" href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a>
+      <ul class="links">
+        <li><a href="https://dimstunt.t.me/">Telegram</a></li>
+        <li><a href="https://www.linkedin.com/in/dimstunt/">LinkedIn</a></li>
+        <li><a href="https://github.com/dimstunt">GitHub</a></li>
+        <li><a href="https://www.instagram.com/dimstunt/">Instagram</a></li>
+      </ul>
+      <div class="actions"><a class="btn dark" href="/cv/">Open CV
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+      </a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 dimstunt · built by hand · no cookies, one anonymous visit counter</div>
+</footer>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8870d9da0eba46769ab41a7fc707dda6"}'></script>
 </body>
-
 </html>

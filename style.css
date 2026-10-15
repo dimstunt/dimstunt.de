@@ -1,0 +1,317 @@
+@font-face { font-family: "Big Shoulders"; src: url(/fonts/big-shoulders.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url(/fonts/chakra-400.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url(/fonts/chakra-600.woff2) format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url(/fonts/chakra-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url(/fonts/jetbrains-mono.woff2) format("woff2"); font-weight: 100 800; font-display: swap; }
+@font-face { font-family: "Silkscreen"; src: url(/fonts/silkscreen.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+
+:root {
+  --yellow: oklch(0.92 0.19 103);
+  --ink: oklch(0.16 0.012 265);
+  --ink-2: oklch(0.21 0.016 265);
+  --paper: oklch(0.96 0.025 103);
+  --dim: oklch(0.78 0.03 103);
+  --cyan: oklch(0.86 0.14 200);
+  --red: oklch(0.66 0.24 25);
+  --acid: oklch(0.9 0.23 132);
+  --flesh: oklch(0.8 0.08 25);
+  --rule: color-mix(in oklch, var(--paper) 22%, transparent);
+
+  --display: "Big Shoulders", "Arial Narrow", sans-serif;
+  --text: "Chakra Petch", system-ui, sans-serif;
+  --data: "JetBrains Mono", ui-monospace, monospace;
+  --pixel: "Silkscreen", monospace;
+
+  --cut: 1.1rem;
+  --chamfer: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --section: clamp(4rem, 2.5rem + 6vw, 8rem);
+
+  color-scheme: dark;
+  scrollbar-color: var(--yellow) var(--ink);
+}
+
+*, *::before, *::after { box-sizing: border-box; min-width: 0; }
+:root { text-wrap: pretty; overflow-wrap: break-word; font-synthesis: none; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+h1, h2, h3 { text-wrap: balance; }
+svg { display: block; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--ink);
+  color: var(--paper);
+  font: 400 clamp(1rem, 0.94rem + 0.3vw, 1.15rem)/1.6 var(--text);
+}
+::selection { background: var(--yellow); color: var(--ink); }
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+a:active, .btn:active { translate: 1px 1px; }
+
+.wrap { inline-size: min(100% - 2 * var(--gutter), 72rem); margin-inline: auto; }
+.num { font-family: var(--data); font-variant-numeric: tabular-nums; }
+
+/* ---------- HUD strip ---------- */
+.hud {
+  background: var(--ink);
+  border-block-end: 1px solid var(--rule);
+  font: 500 0.8rem/1 var(--data);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hud .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; padding-block: 0.8rem; }
+.hud .id { color: var(--yellow); font-weight: 700; }
+.hud .node { color: var(--dim); }
+.hud nav { margin-inline-start: auto; display: flex; gap: 1.25rem; }
+.hud nav a { text-decoration: none; color: var(--paper); }
+.hud nav a::before { content: "["; color: var(--red); }
+.hud nav a::after { content: "]"; color: var(--red); }
+
+/* ---------- hero: drenched yellow field ---------- */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(circle at 1px 1px, color-mix(in oklch, var(--ink) 14%, transparent) 1px, transparent 1.6px) 0 0 / 7px 7px,
+    var(--yellow);
+  color: var(--ink);
+  padding-block: clamp(2.5rem, 1rem + 5vw, 5rem) clamp(4rem, 2rem + 6vw, 7rem);
+}
+.hero::after { /* hazard tape into the ink below */
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 1.1rem;
+  background: repeating-linear-gradient(-45deg, var(--ink) 0 0.9rem, var(--yellow) 0.9rem 1.8rem);
+}
+.hero .wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: clamp(1.5rem, 1rem + 1.5vw, 2.5rem) clamp(2rem, 1rem + 3vw, 4rem);
+  align-items: start;
+}
+.hero h1 {
+  grid-column: 1 / -1;
+  margin: 0;
+  font: 900 clamp(3.2rem, 0.8rem + 9.5vw, 9.5rem)/0.84 var(--display);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.hero h1 span { display: block; }
+.hero h1 span + span { inline-size: fit-content; margin-block-start: 0.05em; padding: 0.08em 0.14em 0; background: var(--ink); color: var(--yellow); --cut: 0.2em; clip-path: var(--chamfer); }
+.tagline { margin: 1.25rem 0 0; font: 700 clamp(1.15rem, 1rem + 0.8vw, 1.6rem)/1.2 var(--text); text-transform: uppercase; letter-spacing: 0.02em; }
+.pitch { margin: 1rem 0 0; max-inline-size: 34ch; font-size: clamp(1.05rem, 0.98rem + 0.4vw, 1.25rem); font-weight: 600; }
+
+/* operative card */
+.card {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  clip-path: var(--chamfer);
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+.card h2 {
+  margin: 0 0 1rem;
+  font: 700 0.85rem/1 var(--data);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  display: flex;
+  gap: 0.75rem;
+}
+.card h2 span { color: var(--red); }
+.card dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1rem; }
+.card dt { font: 500 0.75rem/1.9 var(--data); letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); }
+.card dd { margin: 0; font-weight: 600; }
+.card dd b { color: var(--cyan); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin-block-start: 1.5rem; }
+
+.btn {
+  --cut: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.3rem;
+  background: var(--yellow);
+  color: var(--ink);
+  clip-path: var(--chamfer);
+  font: 700 1rem/1 var(--text);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn svg { inline-size: 1.1em; block-size: 1.1em; flex: none; }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: -6px; }
+.hero a:not(.btn):focus-visible, .jack a:not(.btn):focus-visible { outline-color: var(--ink); }
+.btn.dark { background: var(--ink); color: var(--yellow); }
+.btn.dark:focus-visible { outline-color: var(--yellow); }
+.mail { font: 500 0.95rem var(--data); color: var(--cyan); }
+
+/* sticker: crude, taped on */
+.sticker {
+  position: absolute;
+  inset-block-start: -1.4rem;
+  inset-inline-end: -0.6rem;
+  rotate: 7deg;
+  max-inline-size: 12.5rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--acid);
+  color: var(--ink);
+  font: 400 0.85rem/1.25 var(--pixel);
+  text-transform: uppercase;
+  box-shadow: 0.2rem 0.35rem 0.6rem color-mix(in oklch, var(--ink) 45%, transparent);
+}
+.sticker::before { /* tape */
+  content: "";
+  position: absolute;
+  inset-block-start: -0.55rem;
+  inset-inline-start: 30%;
+  inline-size: 3.2rem;
+  block-size: 1.1rem;
+  rotate: -10deg;
+  background: color-mix(in oklch, var(--paper) 55%, transparent);
+}
+.card-wrap { position: relative; }
+
+/* ---------- sections on ink ---------- */
+section.block { padding-block: var(--section) 0; }
+.block .wrap { position: relative; padding: clamp(1.25rem, 0.5rem + 2vw, 2.5rem); }
+.block .wrap::before, .block .wrap::after { /* HUD corner brackets */
+  content: "";
+  position: absolute;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  pointer-events: none;
+}
+.block .wrap::before { inset-block-start: 0; inset-inline-start: 0; border-block-start: 3px solid var(--yellow); border-inline-start: 3px solid var(--yellow); }
+.block .wrap::after { inset-block-end: 0; inset-inline-end: 0; border-block-end: 3px solid var(--red); border-inline-end: 3px solid var(--red); }
+.block h2, .jack h2 {
+  margin: 0;
+  font: 900 clamp(2.4rem, 1.6rem + 3.5vw, 4.25rem)/0.95 var(--display);
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.lede { margin: 0.75rem 0 0; color: var(--dim); max-inline-size: 60ch; }
+
+/* contract log */
+.log { list-style: none; margin: 2.5rem 0 0; padding: 0; border-block-start: 2px solid var(--yellow); }
+.log li {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 9rem) 1fr;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1.25rem;
+  border-block-end: 1px solid var(--rule);
+}
+.log .when { grid-row: span 2; font: 500 0.85rem/1.8 var(--data); color: var(--dim); }
+.log .when.now { color: var(--red); font-weight: 700; }
+.log .who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; }
+.log .who b { font: 800 clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)/1.05 var(--display); text-transform: uppercase; }
+.log .who span { color: var(--dim); }
+.log .pay { margin: 0; font: 500 0.92rem/1.6 var(--data); color: var(--cyan); }
+.more { margin-block-start: 2rem; }
+@media (width < 40rem) { .log li { grid-template-columns: 1fr; } .log .when { grid-row: auto; } }
+
+/* cruelty-squad style advert: deliberately crude */
+.ad-zone { padding-block: var(--section) 0; }
+.ad {
+  display: grid;
+  gap: 1rem 2rem;
+  align-items: center;
+  padding: clamp(1.25rem, 0.8rem + 2vw, 2.25rem);
+  rotate: -1.2deg;
+  color: var(--ink);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"),
+    var(--acid);
+  border: 6px double var(--ink);
+  outline: 4px solid var(--flesh);
+}
+.ad p { margin: 0; }
+.ad { grid-template-columns: 1fr auto auto; }
+.face { inline-size: clamp(7rem, 14vw, 12rem); block-size: auto; image-rendering: pixelated; rotate: 3deg; outline: 4px solid var(--ink); }
+@media (width < 48rem) { .ad { grid-template-columns: 1fr; } .face { inline-size: 8rem; } }
+.ad .shout { font: 400 clamp(1rem, 0.8rem + 1.2vw, 1.8rem)/1.2 var(--pixel); text-transform: uppercase; }
+.ad .offer { font: 900 clamp(2.2rem, 1.4rem + 3.6vw, 4.2rem)/0.9 var(--display); text-transform: uppercase; }
+.ad .offer em { font-style: normal; background: var(--flesh); padding-inline: 0.15em; white-space: nowrap; }
+.ad .offer { margin-block-start: 0.4rem; }
+.ad .fine { margin-block-start: 0.6rem; font: 500 0.75rem/1.4 var(--data); }
+.ad .btn { background: var(--red); color: var(--ink); rotate: 2deg; }
+.ad .btn:focus-visible { outline-color: var(--ink); }
+
+/* installed cyberware */
+.ware { margin: 2.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); gap: 0 2.5rem; }
+.ware div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding-block: 0.9rem; border-block-end: 1px dashed var(--rule); }
+.ware dt { font: 700 0.75rem/1.9 var(--data); letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); }
+.ware dd { margin: 0; }
+
+/* side gigs */
+.gigs { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 1.5rem; }
+.gigs li {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--ink-2);
+  clip-path: var(--chamfer);
+}
+.gigs h3 { flex: 1 1 12rem; margin: 0; font: 800 clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem)/1 var(--display); text-transform: uppercase; color: var(--cyan); }
+.gigs li > div { flex: 3 1 22rem; }
+.gigs li:nth-child(2) { margin-inline-start: clamp(0rem, 4vw, 4rem); rotate: -0.6deg; }
+.gigs li::before { content: ""; position: absolute; inset-block-start: 0; inset-inline-end: 2.5rem; inline-size: 4rem; block-size: 0.9rem; rotate: 3deg; background: color-mix(in oklch, var(--flesh) 70%, transparent); }
+.gigs p { margin: 0; }
+.gigs .stack { margin-block-start: 0.5rem; font: 500 0.8rem/1.5 var(--data); color: var(--dim); }
+.note { margin-block-start: 1.25rem; font: 500 0.85rem/1.5 var(--data); color: var(--red); }
+
+/* jack in: back to yellow for the ending */
+.jack {
+  margin-block-start: var(--section);
+  background: var(--yellow);
+  color: var(--ink);
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem);
+}
+.block h2 { display: inline-block; padding: 0.1em 0.3em 0; background: var(--yellow); color: var(--ink); --cut: 0.3em; clip-path: var(--chamfer); }
+.jack h2 { color: var(--ink); }
+.jack .big { overflow-wrap: anywhere; }
+.jack .big {
+  display: inline-block;
+  margin-block-start: 1.5rem;
+  font: 800 clamp(1.5rem, 0.9rem + 3vw, 3.4rem)/1 var(--display);
+  text-decoration-thickness: 4px;
+}
+.links { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; margin: 2rem 0 0; padding: 0; list-style: none; font: 700 1rem var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
+.jack .actions { margin-block-start: 2.5rem; }
+
+footer { padding-block: 2rem; font: 500 0.8rem/1.5 var(--data); color: var(--dim); }
+
+/* ---------- interaction ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { background: var(--ink); color: var(--yellow); }
+  .btn.dark:hover, .ad .btn:hover { background: var(--yellow); color: var(--ink); }
+  .block .btn:hover { background: var(--cyan); color: var(--ink); }
+  .hud nav a:hover { color: var(--red); }
+  .card .btn:hover { background: var(--cyan); color: var(--ink); }
+  .jack .links a:hover, .jack .big:hover { color: var(--yellow); background: var(--ink); text-decoration-color: var(--red); }
+}
+
+/* ---------- the one authored moment: power-on glitch ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 span { animation: slice 700ms steps(1, end) backwards; }
+  .hero h1 span + span { animation-delay: 120ms; }
+  .card { animation: boot 650ms cubic-bezier(0.16, 1, 0.3, 1) 250ms backwards; }
+  .sticker { animation: slap 380ms cubic-bezier(0.16, 1, 0.3, 1) 800ms backwards; }
+  .btn { transition: background-color 120ms, color 120ms; }
+}
+@keyframes slice {
+  0%   { clip-path: inset(0 0 100% 0); }
+  15%  { clip-path: inset(10% 0 55% 0); translate: -0.08em 0; }
+  30%  { clip-path: inset(60% 0 5% 0); translate: 0.06em 0; }
+  45%  { clip-path: inset(0 0 40% 0); translate: -0.03em 0; }
+  60%  { clip-path: inset(35% 0 0 0); translate: 0.02em 0; }
+  75%  { clip-path: inset(0); translate: 0; }
+}
+@keyframes boot {
+  from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); filter: brightness(2.5); }
+  to   { clip-path: var(--chamfer); filter: none; }
+}
+@keyframes slap { from { scale: 1.6; opacity: 0; rotate: -4deg; } }
