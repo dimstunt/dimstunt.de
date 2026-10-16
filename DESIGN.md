@@ -191,7 +191,7 @@ The form language is the chamfer: a 45-degree cut on top-right and bottom-left v
 - **Focus:** 3px inset ring (-6px offset), ink on yellow buttons, yellow on dark.
 
 ### Operative Card
-Ink chamfer panel on the yellow hero. Mono title in yellow, a definition grid ending in an acid "Status: Open to freelance" line, (dim mono field names, 600 values, cyan emphasis), then OPEN CV with the email beside it. A taped acid sticker hangs off its corner. Boots in with a brightness flash.
+Ink chamfer panel on the yellow hero. Mono title in yellow, a definition grid ending in an acid "Status: Open to consulting" line, (dim mono field names, 600 values, cyan emphasis), then OPEN CV with the email beside it. A taped acid sticker hangs off its corner. Boots in with a brightness flash.
 
 ### Navigation (HUD strip)
 Ink bar with a 1px rule. Mono, 0.8rem, uppercase. Yellow bold id, dim node text, nav links in paper wrapped in red square brackets, hover turns red. Wraps on small screens.

@@ -35,7 +35,7 @@ Nine years of data platforms (Tinkoff, Mail.ru Group, Citymobil, Agro.club, Anab
 
 - Name: Dmitrii Cherkashin; handle dimstunt; tagline "data engineer · snowboarder".
 - Location: Montevideo, Uruguay · remote.
-- Availability: employed at Welltory, open to freelance projects.
+- Availability: employed at Welltory, open to consulting.
 - Contacts (all public): mit.cherkashin@gmail.com, t.me/dimstunt, linkedin.com/in/dimstunt, github.com/dimstunt, instagram.com/dimstunt.
 
 ## Evidence on Hand
