@@ -29,14 +29,14 @@
 <main class="cv">
   <header class="cv-head">
     <h1>Dmitrii Cherkashin</h1>
-    <p class="role">Data engineer · Montevideo, Uruguay · remote</p>
+    <p class="role">Data engineer · Montevideo, Uruguay · remote · open to freelance</p>
     <ul class="contacts">
       <li><a href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a></li>
       <li><a href="https://www.linkedin.com/in/dimstunt/">linkedin.com/in/dimstunt</a></li>
       <li><a href="https://github.com/dimstunt">github.com/dimstunt</a></li>
       <li><a href="/">dimstunt.de</a></li>
     </ul>
-    <button class="btn no-print" type="button" onclick="print()">Save as PDF</button>
+    <a class="btn no-print" href="/cv/dmitrii-cherkashin-cv.pdf" download>Download PDF</a>
   </header>
 
   <h2>About</h2>
@@ -49,18 +49,18 @@
 
   <section class="job">
     <div class="job-head"><strong>Welltory <span>Data Engineer</span></strong><span>Remote · 01/2025 – now</span></div>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Forked and maintain an abandoned open-source Kafka Connect DynamoDB Streams connector in production (12 tables, 300+ shards); cut its checkpoint write load <b>~5.7×</b> with zero throttling</li>
+      <li>Scaled the CDC pipeline through an <b>80×</b> surge in data volume after a major product launch</li>
+      <li>Retired the legacy data lake after migrating its history into Iceberg</li>
+    </ul>
     <h3>Responsibilities</h3>
     <ul>
       <li>Own the company's data platform end to end: availability, quality, access speed and cost of data for analytics and health calculations</li>
       <li>Designed and built a data lakehouse on AWS from scratch: S3 + Apache Iceberg, Glue, Athena, Airflow</li>
       <li>CDC replication from Postgres and DynamoDB via Kafka into the lakehouse</li>
       <li>Data catalog and lineage in OpenMetadata; column-level access control with Lake Formation tags (PII/PHI); GDPR export and erasure pipelines</li>
-    </ul>
-    <h3>Achievements</h3>
-    <ul>
-      <li>Forked and maintain an abandoned open-source Kafka Connect DynamoDB Streams connector in production (12 tables, 300+ shards); cut its checkpoint write load ~5.7× with zero throttling</li>
-      <li>Scaled the CDC pipeline through an 80× surge in data volume after a major product launch</li>
-      <li>Retired the legacy data lake after migrating its history into Iceberg</li>
     </ul>
   </section>
 
@@ -73,22 +73,26 @@
 
   <section class="job">
     <div class="job-head"><strong>Anabar <span>Senior Data Engineer</span></strong><span>Remote · 02/2023 – 06/2024</span></div>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Reduced data processing time from <b>17 to 7 hours</b>, raising SLA compliance from <b>70% to 95%</b></li>
+      <li>Cut ClickHouse storage usage <b>by 40%</b></li>
+      <li>Improved p90 query response time from <b>20 seconds to under 1 second</b></li>
+      <li>Mentored engineers and gave internal tech talks on data engineering</li>
+    </ul>
     <h3>Responsibilities</h3>
     <ul>
       <li>Designed and implemented data processing pipelines with Airflow, Trino and ClickHouse in Yandex Cloud</li>
       <li>Took part in the migration from a monolith to FastAPI microservices</li>
     </ul>
-    <h3>Achievements</h3>
-    <ul>
-      <li>Reduced data processing time from 17 to 7 hours, raising SLA compliance from 70% to 95%</li>
-      <li>Cut ClickHouse storage usage by 40%</li>
-      <li>Improved p90 query response time from 20 seconds to under 1 second</li>
-      <li>Mentored engineers and gave internal tech talks on data engineering</li>
-    </ul>
   </section>
 
   <section class="job">
     <div class="job-head"><strong>Agro.club <span>Lead Data Engineer</span></strong><span>Moscow · 09/2021 – 11/2022</span></div>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Accelerated business report generation from <b>1.5 hours to 1–2 minutes</b></li>
+    </ul>
     <h3>Responsibilities</h3>
     <ul>
       <li>Hired and managed the DWH team from scratch; set the strategy, processes and deadlines for the DWH division</li>
@@ -97,23 +101,19 @@
       <li>Built data synchronization between partner ERP systems and the PostgreSQL backend, keeping partner data consistent</li>
       <li>Introduced data quality checks and data governance</li>
     </ul>
-    <h3>Achievements</h3>
-    <ul>
-      <li>Accelerated business report generation from 1.5 hours to 1–2 minutes</li>
-    </ul>
   </section>
 
   <section class="job">
     <div class="job-head"><strong>Citymobil <span>Senior Data Engineer</span></strong><span>Moscow · 06/2020 – 09/2021</span></div>
+    <h3>Achievements</h3>
+    <ul>
+      <li>Designed self-service replication for “one-click” table onboarding</li>
+    </ul>
     <h3>Responsibilities</h3>
     <ul>
       <li>Built ETL pipelines from MySQL, ClickHouse, Kafka and APIs into the warehouse with Airflow</li>
       <li>Implemented online CDC replication MySQL → Kafka → Exasol</li>
       <li>Designed and implemented the Data Vault DDS loader with Airflow DAGs and operators</li>
-    </ul>
-    <h3>Achievements</h3>
-    <ul>
-      <li>Designed self-service replication for “one-click” table onboarding</li>
     </ul>
   </section>
 
@@ -122,7 +122,7 @@
     <ul>
       <li>Created the DWH data model for Delivery Club and the logical data model for Citymobil from scratch</li>
       <li>Built e-commerce user portrait reports in Tableau; supported Spark processing scripts</li>
-      <li>Reduced time from task creation to production reporting from 3 weeks to 1 week</li>
+      <li>Reduced time from task creation to production reporting from <b>3 weeks to 1 week</b></li>
     </ul>
   </section>
 

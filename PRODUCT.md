@@ -25,7 +25,7 @@ Nine years of data platforms (Tinkoff, Mail.ru Group, Citymobil, Agro.club, Anab
 
 ## Capabilities and Constraints
 
-- Pages: `/` (landing with projects and contacts) and `/cv/` (full CV, print-to-PDF ready).
+- Pages: `/` (landing with projects and contacts), `/cv/` (full CV) with a static PDF at `/cv/dmitrii-cherkashin-cv.pdf` (regenerate when the CV changes), and `404.html`.
 - English only. No blog.
 - CV must print as a clean, sober A4 document (2 pages).
 - Side-project repos are private and never linked; project cards carry no links.
@@ -35,6 +35,7 @@ Nine years of data platforms (Tinkoff, Mail.ru Group, Citymobil, Agro.club, Anab
 
 - Name: Dmitrii Cherkashin; handle dimstunt; tagline "data engineer · snowboarder".
 - Location: Montevideo, Uruguay · remote.
+- Availability: employed at Welltory, open to freelance projects.
 - Contacts (all public): mit.cherkashin@gmail.com, t.me/dimstunt, linkedin.com/in/dimstunt, github.com/dimstunt, instagram.com/dimstunt.
 
 ## Evidence on Hand

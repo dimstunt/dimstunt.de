@@ -84,7 +84,7 @@ components:
 
 # Design System: dimstunt.de
 
-Scope: the landing page (`index.html` + `style.css`). `/cv/` (`cv/cv.css`) is a deliberate exception: a sober, print-first document in the earlier restrained style. It does not inherit this world and this world does not inherit from it.
+Scope: the landing page (`index.html` + `style.css`) and `404.html`. `/cv/` loads `style.css` for fonts and tokens and adds `cv/cv.css`: the same type, palette and HUD strip set as a sober document (yellow headings, red list markers, no grime, no motion). Its print stylesheet is plain black on white with a light colour scheme.
 
 ## Overview
 
@@ -154,7 +154,7 @@ All self-hosted woff2 in `/fonts/`, `font-display: swap`; Big Shoulders is prelo
 ### Named Rules
 **The Four Jobs Rule.** Display for names and headings, text for reading and buttons, mono for numbers and field labels, pixel for grime. Do not mix jobs.
 
-**The Tabular Rule.** Every figure (years, dates, payouts) is mono with tabular numerals.
+**The Tabular Rule.** Figures in data rows (years, dates, labels) are mono with tabular numerals. Figures inside prose (contract-log payouts, CV achievements) stay in the text face, bold cyan, with tabular numerals.
 
 ## Layout
 
@@ -191,7 +191,7 @@ The form language is the chamfer: a 45-degree cut on top-right and bottom-left v
 - **Focus:** 3px inset ring (-6px offset), ink on yellow buttons, yellow on dark.
 
 ### Operative Card
-Ink chamfer panel on the yellow hero. Mono title in yellow with a red "active" status, a definition grid (dim mono field names, 600 values, cyan emphasis), then OPEN CV with the email beside it. A taped acid sticker hangs off its corner. Boots in with a brightness flash.
+Ink chamfer panel on the yellow hero. Mono title in yellow, a definition grid ending in an acid "Status: Open to freelance" line, (dim mono field names, 600 values, cyan emphasis), then OPEN CV with the email beside it. A taped acid sticker hangs off its corner. Boots in with a brightness flash.
 
 ### Navigation (HUD strip)
 Ink bar with a 1px rule. Mono, 0.8rem, uppercase. Yellow bold id, dim node text, nav links in paper wrapped in red square brackets, hover turns red. Wraps on small screens.
@@ -213,7 +213,7 @@ Yellow ground, ink text; big display email link with 4px underline; links in bol
 ### Do:
 - **Do** fill whole sections only with `yellow` or `ink`.
 - **Do** cut container and button corners with `--chamfer`; resize via `--cut`.
-- **Do** set every number in JetBrains Mono with tabular numerals.
+- **Do** set numbers in data rows in JetBrains Mono; inside prose use bold cyan text-face figures with tabular numerals.
 - **Do** switch focus rings to ink on yellow grounds and keep them inset on clipped buttons.
 - **Do** keep tilt, tape, noise and pixel type inside the advert, sticker and gig tape.
 - **Do** gate any animation behind `prefers-reduced-motion: no-preference`, and limit hover styles to `(hover: hover) and (pointer: fine)`.
@@ -223,5 +223,5 @@ Yellow ground, ink text; big display email link with 4px underline; links in bol
 - **Don't** put acid or flesh on UI, body text or section grounds.
 - **Don't** set cyan or red text on yellow.
 - **Don't** add motion beyond the single power-on sequence and 120ms colour swaps.
-- **Don't** bring this world into `/cv/`, which stays sober and print-clean.
+- **Don't** bring grime, motion or the yellow field into `/cv/`; it carries the type and palette only and prints black on white.
 - **Don't** add shadows to flat surfaces; the sticker's drop is the only one.

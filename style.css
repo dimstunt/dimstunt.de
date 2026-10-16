@@ -31,6 +31,8 @@
   scrollbar-color: var(--yellow) var(--ink);
 }
 
+@view-transition { navigation: auto; }
+
 *, *::before, *::after { box-sizing: border-box; min-width: 0; }
 :root { text-wrap: pretty; overflow-wrap: break-word; font-synthesis: none; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 h1, h2, h3 { text-wrap: balance; }
@@ -63,6 +65,7 @@ a:active, .btn:active { translate: 1px 1px; }
 .hud .id { color: var(--yellow); font-weight: 700; }
 .hud .node { color: var(--dim); }
 .hud nav { margin-inline-start: auto; display: flex; gap: 1.25rem; }
+@media (width < 40rem) { .hud .node { display: none; } }
 .hud nav a { text-decoration: none; color: var(--paper); }
 .hud nav a::before { content: "["; color: var(--red); }
 .hud nav a::after { content: "]"; color: var(--red); }
@@ -91,6 +94,7 @@ a:active, .btn:active { translate: 1px 1px; }
   align-items: start;
 }
 .hero h1 {
+  view-transition-name: name;
   grid-column: 1 / -1;
   margin: 0;
   font: 900 clamp(3.2rem, 0.8rem + 9.5vw, 9.5rem)/0.84 var(--display);
@@ -119,11 +123,11 @@ a:active, .btn:active { translate: 1px 1px; }
   display: flex;
   gap: 0.75rem;
 }
-.card h2 span { color: var(--red); }
 .card dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.55rem 1rem; }
 .card dt { font: 500 0.75rem/1.9 var(--data); letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); }
 .card dd { margin: 0; font-weight: 600; }
 .card dd b { color: var(--cyan); font-weight: 600; }
+.card dd.status { color: var(--acid); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin-block-start: 1.5rem; }
 
 .btn {
@@ -208,7 +212,7 @@ section.block { padding-block: var(--section) 0; }
 .log .who b { font: 800 clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)/1.05 var(--display); text-transform: uppercase; }
 .log .who span { color: var(--dim); }
 .log .pay { margin: 0.35rem 0 0; max-inline-size: 62ch; }
-.log .pay b { font-family: inherit; color: var(--cyan); font-weight: 700; white-space: nowrap; }
+.log .pay b { font-family: inherit; font-variant-numeric: tabular-nums; color: var(--cyan); font-weight: 700; white-space: nowrap; }
 .more { margin-block-start: 2rem; }
 @media (width < 40rem) { .log li { grid-template-columns: 1fr; } .log .when { grid-row: auto; } }
 
