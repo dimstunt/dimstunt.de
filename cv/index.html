@@ -11,18 +11,32 @@
   <meta property="og:title" content="Dmitrii Cherkashin — CV">
   <meta property="og:image" content="https://dimstunt.de/og.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/cv/cv.css">
 </head>
 <body>
+<header class="hud no-print">
+  <div class="wrap">
+    <a class="id" href="/">dimstunt.de</a>
+    <span class="node">Contractor file · full record</span>
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 <main class="cv">
-  <header>
-    <div>
-      <a class="mono no-print" href="/">← dimstunt.de</a>
-      <h1>Dmitrii Cherkashin</h1>
-      <p>Data Engineer · Montevideo, Uruguay · remote</p>
-      <p><a href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a> · <a href="https://www.linkedin.com/in/dimstunt/">linkedin.com/in/dimstunt</a> · <a href="https://github.com/dimstunt">github.com/dimstunt</a> · <a href="/">dimstunt.de</a></p>
-    </div>
-    <button class="button no-print" onclick="print()">save as PDF</button>
+  <header class="cv-head">
+    <h1>Dmitrii Cherkashin</h1>
+    <p class="role">Data engineer · Montevideo, Uruguay · remote</p>
+    <ul class="contacts">
+      <li><a href="mailto:mit.cherkashin@gmail.com">mit.cherkashin@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/dimstunt/">linkedin.com/in/dimstunt</a></li>
+      <li><a href="https://github.com/dimstunt">github.com/dimstunt</a></li>
+      <li><a href="/">dimstunt.de</a></li>
+    </ul>
+    <button class="btn no-print" type="button" onclick="print()">Save as PDF</button>
   </header>
 
   <h2>About</h2>
@@ -34,7 +48,7 @@
   <h2>Experience</h2>
 
   <section class="job">
-    <div class="job-head"><strong>Welltory · Data Engineer</strong><span>Remote · 01/2025 – now</span></div>
+    <div class="job-head"><strong>Welltory <span>Data Engineer</span></strong><span>Remote · 01/2025 – now</span></div>
     <h3>Responsibilities</h3>
     <ul>
       <li>Own the company's data platform end to end: availability, quality, access speed and cost of data for analytics and health calculations</li>
@@ -51,14 +65,14 @@
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>US music publisher · Data Engineer (contract)</strong><span>Remote · 2024</span></div>
+    <div class="job-head"><strong>US music publisher <span>Data Engineer (contract)</span></strong><span>Remote · 2024</span></div>
     <ul>
       <li>Replication from IBM AS/400 into ClickHouse with data-quality reconciliation and recovery tooling</li>
     </ul>
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>Anabar · Senior Data Engineer</strong><span>Remote · 02/2023 – 06/2024</span></div>
+    <div class="job-head"><strong>Anabar <span>Senior Data Engineer</span></strong><span>Remote · 02/2023 – 06/2024</span></div>
     <h3>Responsibilities</h3>
     <ul>
       <li>Designed and implemented data processing pipelines with Airflow, Trino and ClickHouse in Yandex Cloud</li>
@@ -76,7 +90,7 @@
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>Agro.club · Lead Data Engineer</strong><span>Moscow · 09/2021 – 11/2022</span></div>
+    <div class="job-head"><strong>Agro.club <span>Lead Data Engineer</span></strong><span>Moscow · 09/2021 – 11/2022</span></div>
     <h3>Responsibilities</h3>
     <ul>
       <li>Hired and managed the DWH team from scratch; set the strategy, processes and deadlines for the DWH division</li>
@@ -94,7 +108,7 @@
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>Citymobil · Senior Data Engineer</strong><span>Moscow · 06/2020 – 09/2021</span></div>
+    <div class="job-head"><strong>Citymobil <span>Senior Data Engineer</span></strong><span>Moscow · 06/2020 – 09/2021</span></div>
     <h3>Responsibilities</h3>
     <ul>
       <li>Built ETL pipelines from MySQL, ClickHouse, Kafka and APIs into the warehouse with Airflow</li>
@@ -109,7 +123,7 @@
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>Mail.ru Group · Senior System Analyst DWH</strong><span>Moscow · 11/2018 – 06/2020</span></div>
+    <div class="job-head"><strong>Mail.ru Group <span>Senior System Analyst DWH</span></strong><span>Moscow · 11/2018 – 06/2020</span></div>
     <ul>
       <li>Created the DWH data model for Delivery Club and the logical data model for Citymobil from scratch</li>
       <li>Built e-commerce user portrait reports in Tableau; supported Spark processing scripts</li>
@@ -118,7 +132,7 @@
   </section>
 
   <section class="job">
-    <div class="job-head"><strong>Tinkoff Bank · System Analyst DWH</strong><span>Moscow · 10/2017 – 11/2018</span></div>
+    <div class="job-head"><strong>Tinkoff Bank <span>System Analyst DWH</span></strong><span>Moscow · 10/2017 – 11/2018</span></div>
     <ul>
       <li>Designed the integration receiving checks from the national payment card system</li>
       <li>Designed and prototyped Data Vault data models and data marts in SAP PowerDesigner</li>
@@ -148,7 +162,7 @@
   <h2>Interests</h2>
   <p>Running · Climbing · Snowboarding · Surfing</p>
 
-  <footer class="no-print"><a href="/">← dimstunt.de</a></footer>
+  
 </main>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8870d9da0eba46769ab41a7fc707dda6"}'></script>
 </body>

@@ -1,81 +1,57 @@
-:root {
-  --bg: #0b0f14;
-  --surface: #121821;
-  --fg: #e6edf3;
-  --muted: #8b98a7;
-  --line: #243041;
-  --accent: #5eead4;
-  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f7f7f4;
-    --surface: #ffffff;
-    --fg: #161b22;
-    --muted: #5b6673;
-    --line: #d9dde3;
-    --accent: #0f766e;
-    color-scheme: light;
-  }
-}
-
+/* CV: the landing's type and palette, set as a sober document. Tokens and fonts come from /style.css. */
 @view-transition { navigation: auto; }
 
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font: 17px/1.6 var(--sans);
-}
-a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.mono { font-family: var(--mono); }
-.muted { color: var(--muted); }
+.hud .id { text-decoration: none; }
 
-main { max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+.cv { inline-size: min(100% - 2 * var(--gutter), 50rem); margin-inline: auto; padding-block: clamp(2rem, 1.5rem + 2vw, 3.5rem) 4rem; }
 
-.button {
-  display: inline-block; font: 600 .95rem var(--mono); text-decoration: none;
-  color: var(--bg); background: var(--accent); padding: .55rem 1rem; border-radius: 6px; border: 0; cursor: pointer;
-}
+.cv-head { display: grid; gap: 0.9rem; padding-block-end: 1.75rem; border-block-end: 2px solid var(--yellow); }
+.cv h1 { margin: 0; font: 900 clamp(2.6rem, 1.6rem + 4vw, 4.75rem)/0.9 var(--display); text-transform: uppercase; color: var(--yellow); view-transition-name: name; }
+.role { margin: 0; font-weight: 600; font-size: 1.15rem; }
+.contacts { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; margin: 0; padding: 0; list-style: none; font: 500 0.85rem/1.5 var(--data); }
+.contacts a { color: var(--cyan); }
+.cv-head .btn { justify-self: start; margin-block-start: 0.4rem; border: 0; cursor: pointer; }
 
-footer { padding: 2rem 0 3rem; font: .8rem var(--mono); color: var(--muted); }
+.cv h2 { margin: 2.75rem 0 1rem; font: 900 clamp(1.7rem, 1.4rem + 1vw, 2.2rem)/1 var(--display); text-transform: uppercase; color: var(--yellow); }
+.cv > p { max-inline-size: 68ch; }
 
-/* cv */
-.cv { padding-top: 2rem; }
-.cv header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 2rem; }
-.cv h1 { font-size: 2.2rem; line-height: 1.1; margin: .6rem 0 .4rem; view-transition-name: name; }
-.cv header p { margin: 0; font: .85rem var(--mono); color: var(--muted); }
-.cv h2 { font: 600 .9rem var(--mono); text-transform: lowercase; color: var(--accent); border-bottom: 1px solid var(--line); padding-bottom: .3rem; margin: 2rem 0 1rem; }
-.job { margin-bottom: 1.5rem; break-inside: avoid; }
-.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1rem; }
-.job-head strong { font-size: 1.05rem; }
-.job-head span { font: .85rem var(--mono); color: var(--muted); }
-.job h3 { margin: .6rem 0 .2rem; font: 600 .8rem var(--mono); color: var(--muted); }
-.job ul, .cv .plain { margin: .2rem 0; padding-left: 1.2rem; }
-.skills { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; margin: 0; }
-.skills dt { font: 600 .85rem/1.9 var(--mono); color: var(--muted); }
+.job { margin-block-end: 2rem; break-inside: avoid; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.2rem 1rem; padding-block-end: 0.4rem; border-block-end: 1px solid var(--rule); }
+.job-head strong { font: 800 1.45rem/1.1 var(--display); text-transform: uppercase; }
+.job-head strong span { margin-inline-start: 0.5rem; font: 600 1rem var(--text); text-transform: none; color: var(--dim); }
+.job-head > span { font: 500 0.8rem var(--data); color: var(--dim); }
+.job h3 { margin: 0.9rem 0 0.3rem; font: 700 0.72rem/1.4 var(--data); letter-spacing: 0.08em; text-transform: uppercase; color: var(--yellow); }
+.job ul { margin: 0.4rem 0 0; padding-inline-start: 1.2rem; }
+.job li + li { margin-block-start: 0.25rem; }
+.job li::marker { color: var(--red); }
+
+.skills { display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1.5rem; margin: 0; }
+.skills dt { font: 700 0.75rem/1.9 var(--data); letter-spacing: 0.06em; text-transform: uppercase; color: var(--yellow); }
 .skills dd { margin: 0; }
-@media (max-width: 560px) { .skills { grid-template-columns: 1fr; } .skills dd { margin-bottom: .5rem; } }
+@media (width < 36rem) { .skills { grid-template-columns: 1fr; gap: 0.1rem; } .skills dd { margin-block-end: 0.6rem; } }
+
+@media (hover: hover) and (pointer: fine) {
+  .cv-head .btn:hover { background: var(--cyan); color: var(--ink); }
+}
 
 @media print {
-  :root { --bg: #fff; --surface: #fff; --fg: #000; --muted: #444; --line: #bbb; --accent: #0f766e; }
+  :root { --ink: #fff; --paper: #000; --dim: #444; --yellow: #000; --cyan: #000; --red: #000; --rule: #bbb; }
   @page { size: A4; margin: 12mm 14mm; }
-  body { font-size: 10pt; line-height: 1.4; }
+  body { font-size: 9.5pt; line-height: 1.4; }
   .no-print { display: none !important; }
-  a { color: inherit; text-decoration: none; }
-  main { max-width: none; padding: 0; }
-  .cv { padding: 0; }
-  .cv header { margin-bottom: .6rem; }
-  .cv h1 { margin-top: 0; }
-  .cv h2 { margin: .8rem 0 .4rem; }
-  .cv p { margin: .3rem 0; }
-  .job { margin-bottom: .7rem; }
-  .job h3 { margin: .3rem 0 .1rem; }
-  .skills { gap: .1rem 1rem; }
-  .skills dt { line-height: 1.4; }
+  a { text-decoration: none; }
+  .cv { inline-size: auto; padding: 0; }
+  .cv-head { gap: 0.3rem; padding-block-end: 0.6rem; border-block-end-width: 1.5px; }
+  .cv h1 { font-size: 26pt; }
+  .role { font-size: 10.5pt; }
+  .cv h2 { margin: 0.9rem 0 0.4rem; font-size: 14pt; }
+  .cv p { margin: 0.3rem 0; }
+  .job { margin-block-end: 0.7rem; }
+  .job-head strong { font-size: 12.5pt; }
+  .job-head strong span { font-size: 9.5pt; }
+  .job h3 { margin: 0.35rem 0 0.1rem; }
+  .job ul { margin-block-start: 0.15rem; }
+  .job li + li { margin-block-start: 0; }
+  .skills { gap: 0.05rem 1rem; }
+  .skills dt { line-height: 1.5; }
 }

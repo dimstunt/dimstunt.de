@@ -207,7 +207,8 @@ section.block { padding-block: var(--section) 0; }
 .log .who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 1rem; }
 .log .who b { font: 800 clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)/1.05 var(--display); text-transform: uppercase; }
 .log .who span { color: var(--dim); }
-.log .pay { margin: 0; font: 500 0.92rem/1.6 var(--data); color: var(--cyan); }
+.log .pay { margin: 0.35rem 0 0; max-inline-size: 62ch; }
+.log .pay b { font-family: inherit; color: var(--cyan); font-weight: 700; white-space: nowrap; }
 .more { margin-block-start: 2rem; }
 @media (width < 40rem) { .log li { grid-template-columns: 1fr; } .log .when { grid-row: auto; } }
 
